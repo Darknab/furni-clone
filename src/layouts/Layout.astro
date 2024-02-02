@@ -3,13 +3,13 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
-
+/** 
 interface Props {
 	title: string;
 	headerTitle: string;
 	headerText: string;
 }
-
+*/
 
 const { title, headerTitle, headerText} = Astro.props;
 ---
@@ -39,6 +39,7 @@ const { title, headerTitle, headerText} = Astro.props;
 				</div>
 			</div>
 		</header>
+		<slot />
 		<Footer />
 	</body>
 </html>
