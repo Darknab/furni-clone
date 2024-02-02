@@ -1,10 +1,14 @@
 ---
-import 'bootstrap/dist/css/bootstrap.css'
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
+
+
+const headerTitle = "Modern Interior Design Studio";
+const headerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni maiores libero quos beatae, incidunt blanditiis."
+const title = "Furni"
 ---
 
+<Layout title={title} headerTitle = {headerTitle} headerText= {headerText}>
 
-<Layout title="Welcome to Astro.">
-	<Navigation />
 </Layout>
+
+
