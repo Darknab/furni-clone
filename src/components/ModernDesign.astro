@@ -1,0 +1,75 @@
+---
+import imgGrid1 from '/src/images/img-grid-1.jpg';
+import imgGrid2 from '/src/images/img-grid-2.jpg';
+import imgGrid3 from '/src/images/img-grid-3.jpg';
+
+---
+<section class="container row">
+  <div class="grid col-8">
+    <img class= "image-1 rounded-5" src={imgGrid1.src} alt="A cozy living room corner with a beige sofa and pillows, cork pedestals and potted plants.">
+    <img class= "image-2 rounded-5" src={imgGrid2.src} alt="A modern living room with a black floor lamp, two stylish chairs in green and white, and a grey sofa, all on a light blue rug with large windows in the background.">
+    <img class= "image-3 rounded-5" src={imgGrid3.src} alt="A simple, light-colored wooden stool with a square seat and a handle, on a blue background.">
+  </div>
+
+  <div class="col-4">
+    <h2>We Help You Make Modern Interior Design</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente sequi amet odit accusantium magni voluptatum, vel repellat? Inventore consectetur quia ab, odio harum et alias laudantium, pariatur omnis a sunt?</p>
+    <ul class="grid-list">
+      <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, culpa.</li>
+      <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, assumenda.</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, laudantium?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, placeat.</li>
+    </ul>
+    
+  </div>
+
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-rows: repeat(19, 1fr);
+    grid-template-columns: repeat(30, 1fr);
+    
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .image-1 {
+    /*grid-area: 1 / 1 / 5 / 4;*/
+    grid-row-start: 1;
+    grid-row-end: 20;
+    grid-column-start: 1;
+    grid-column-end: 21;
+  }
+
+  .image-2 {
+    /*grid-area: 1 / 4 / 3 / 6;*/
+    grid-row-start: 1;
+    grid-row-end: 9;
+    grid-column-start: 22;
+    grid-column-end: 31;
+  }
+
+  .image-3 {
+    /*grid-area: 3 / 3 / 6 / 6;*/
+    grid-row-start: 8;
+    grid-row-end: 20;
+    grid-column-start: 17;
+    grid-column-end: 31;
+  }
+
+  .grid-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+
+    & li {
+      list-style-type: circle;
+    }
+  }
+</style>
+
