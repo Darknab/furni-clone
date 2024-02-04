@@ -4,16 +4,19 @@ import TestimonialItem from "./TestimonialItem.astro";
 
 const allTestimonials = await getCollection("testimonials");
 ---
-<section>
-  <h2>Testimonials</h2>
+<section class="position-relative container">
+  <h2 class="text-center">Testimonials</h2>
 
   <div class="testimonials-container">
     {allTestimonials.map((testimonial) =>
        <TestimonialItem text={testimonial.data.text} imageSrc={testimonial.data.image.url} imageAlt={testimonial.data.image.alt} title={testimonial.data.title} subtitle={testimonial.data.subtitle} />
        )}
-    <button id="previous" class="btn btn-outline-dark">Previous</button>
-    <button id="next" class="btn btn-outline-dark">Next</button>
+    <button id="previous" class="btn btn-outline-dark position-absolute top-50 start-0 rounded-circle">&#60;</button>
+    <button id="next" class="btn btn-outline-dark position-absolute top-50 end-0 rounded-circle">&#62;</button>
   </div>
 
 </section>
 
+<style>
+ 
+</style>
