@@ -1,42 +1,16 @@
 ---
-import person1 from '/src/images/person-1.jpg'
+import { getCollection } from "astro:content";
+import TestimonialItem from "./TestimonialItem.astro";
 
-const slides = [
-  {
-    title: 'Maria Jones',
-    subTitle: 'CEO, Co-Founder, XYZ Inc.',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ut nesciunt temporibus qui sit harum officia sint, soluta, cum, ea quas accusantium ab deserunt consectetur quibusdam nisi aliquam sed mollitia!',
-    img: {
-      url: person1.src,
-      alt: 'Picture of Maria Jones',
-    },
-  },
-  {
-    title: 'Maria Jones',
-    subTitle: 'CEO, Co-Founder, XYZ Inc.',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ut nesciunt temporibus qui sit harum officia sint, soluta, cum, ea quas accusantium ab deserunt consectetur quibusdam nisi aliquam sed mollitia!',
-    img: {
-      url: person1.src,
-      alt: 'Picture of Maria Jones',
-    },
-  },
-  {
-    title: 'Maria Jones',
-    subTitle: 'CEO, Co-Founder, XYZ Inc.',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ut nesciunt temporibus qui sit harum officia sint, soluta, cum, ea quas accusantium ab deserunt consectetur quibusdam nisi aliquam sed mollitia!',
-    img: {
-      url: person1.src,
-      alt: 'Picture of Maria Jones',
-    },
-  },
-];
-
+const allTestimonials = await getCollection("testimonials");
 ---
 <section>
   <h2>Testimonials</h2>
 
   <div class="testimonials-container">
-    <div class="testimonial-item"></div>
+    {allTestimonials.map((testimonial) =>
+       <TestimonialItem text={testimonial.data.text} imageSrc={testimonial.data.image.url} imageAlt={testimonial.data.image.alt} title={testimonial.data.title} subtitle={testimonial.data.subtitle} />
+       )}
     <button id="previous" class="btn btn-outline-dark">Previous</button>
     <button id="next" class="btn btn-outline-dark">Next</button>
   </div>
