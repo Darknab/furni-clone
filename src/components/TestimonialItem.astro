@@ -1,0 +1,12 @@
+---
+import { imageConfig } from "astro:assets";
+
+const { text, title, subtitle, imageSrc, imageAlt } = Astro.props;
+---
+
+<div class="testimonial-item">
+  <p>{text}</p>
+  <img src={imageSrc} alt={imageAlt}>
+  <h3>{title}</h3>
+  <p>{subtitle}</p>
+</div>
