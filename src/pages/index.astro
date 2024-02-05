@@ -1,5 +1,6 @@
 ---
 import Crafted from '../components/Crafted.astro';
+import Hero from '../components/Hero.astro';
 import ModernDesign from '../components/ModernDesign.astro';
 import Testimonials from '../components/Testimonials.astro';
 import WhyChooseUS from '../components/whyChooseUS.astro';
@@ -11,11 +12,12 @@ const headerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mag
 const title = "Furni"
 ---
 
-<Layout title={title} headerTitle = {headerTitle} headerText= {headerText}>
-<Crafted />
-<WhyChooseUS />
-<ModernDesign />
-<Testimonials />
+<Layout title={title} >
+  <Hero headerTitle = {headerTitle} headerText= {headerText} />
+  <Crafted />
+  <WhyChooseUS />
+  <ModernDesign />
+  <Testimonials />
 </Layout>
 
 
