@@ -1,0 +1,16 @@
+---
+import couch from '/src/images/couch.png';
+
+const { headerTitle, headerText } = Astro.props;
+---
+<div class="container row">
+  <div class="title-description col-sm">
+    <h1>{headerTitle}</h1>
+    <p>{headerText}</p>
+    <button type="button" class="btn btn-warning">Shop Now</button>
+    <button type="button" class="btn btn-outline-light">Explore</button>
+  </div>
+  <div class="hero-image col-sm">
+    <img src={couch.src} alt="">
+  </div>
+</div>
