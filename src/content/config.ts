@@ -17,7 +17,20 @@ const testimonialsCollection = defineCollection({
 // Here goes the products collection
 
 // Here goes the posts collection
+const postsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.date(),
+    author: z.string(),
+    image: z.object({
+      url: z.string(),
+      alt: z.string()
+    })
+  })
+})
 
 export const collections = {
   testimonials: testimonialsCollection,
+  posts: postsCollection,
 }
