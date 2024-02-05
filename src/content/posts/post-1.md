@@ -1,0 +1,17 @@
+---
+title: 'First Time Home Owner Ideas'
+pubDate: 2021-12-19
+author: 'Kristin Watson'
+image:
+  url: '/src/images/post-1.jpg'
+  alt: ''
+---
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor nisl a velit pharetra efficitur. Vestibulum ut consequat neque. Donec auctor egestas massa, sed pulvinar metus luctus sed. Curabitur sagittis ullamcorper erat, scelerisque dignissim est tempor eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae sapien scelerisque, dignissim leo non, fermentum urna. Pellentesque non ex et massa interdum mollis. Sed libero metus, accumsan vel ipsum eget, auctor rhoncus enim. Suspendisse non fermentum enim, sit amet tempor arcu. Nulla pretium dui id turpis ultricies ultrices nec vel metus.
+
+Vestibulum magna metus, mollis et sodales id, varius a nisl. Curabitur sed velit consectetur, varius mi id, rhoncus lacus. Vestibulum eu justo ligula. Proin id tortor maximus, finibus nibh vitae, vehicula leo. Fusce vulputate enim et quam molestie, ut mollis metus tristique. Ut a lacus consectetur, volutpat mi ac, scelerisque ante. Etiam et aliquet magna, et viverra sem. Sed ultrices convallis elit, a pretium libero consequat a. Sed odio leo, convallis ac orci cursus, ullamcorper ultrices sem. Nam eu sem ut sapien posuere congue placerat vitae augue. Morbi vestibulum accumsan nibh ut iaculis. Nunc nec diam vitae neque feugiat molestie vitae sed augue. Donec et tortor in lectus bibendum laoreet. Proin eleifend risus eget turpis rhoncus semper. Suspendisse pretium orci ac ultrices rutrum.
+
+In a semper felis. Pellentesque porttitor est et diam congue dignissim. Phasellus ornare diam ut lorem ornare scelerisque. Quisque faucibus felis quis turpis volutpat, ut malesuada nunc tincidunt. Etiam id ex ut turpis hendrerit cursus quis ac ante. Sed non pellentesque erat, in consectetur massa. Quisque eu imperdiet nisl. Pellentesque malesuada volutpat turpis ut hendrerit. Nam pretium venenatis imperdiet. Fusce turpis enim, pharetra ac tincidunt in, placerat in est. Aliquam lectus purus, euismod at pulvinar et, pulvinar eget justo. Vivamus dignissim, lorem sed sagittis euismod, mi ante sollicitudin elit, vel ultricies diam purus a massa. Proin eget mollis sapien. Aliquam commodo dictum dignissim.
+
+Morbi at dictum sem. Cras vel placerat nunc. Cras sollicitudin quam sit amet ultricies sollicitudin. Proin blandit mollis tellus, ut iaculis dui tincidunt ut. Nunc pretium ornare arcu ac pellentesque. Nam lacus risus, feugiat ut malesuada nec, imperdiet eu orci. In hac habitasse platea dictumst. Pellentesque et lacus eu sapien tincidunt mollis. In interdum, mauris nec feugiat condimentum, dolor nulla fringilla lectus, sit amet volutpat enim lacus at ligula. Aenean at semper purus. Nulla sit amet velit quam. Suspendisse tincidunt placerat elementum. Vivamus semper libero non arcu posuere mollis. Aenean vitae fringilla purus.
+
+Pellentesque euismod pharetra enim, nec pellentesque metus imperdiet malesuada. Nullam malesuada, nunc quis fermentum porta, libero ligula varius ligula, vel rutrum orci nulla ut odio. Aliquam rutrum lectus quis enim tincidunt, quis dictum lectus luctus. Nam in tellus efficitur, maximus lectus et, ullamcorper quam. Aenean sit amet facilisis dui. Vestibulum quis dolor at arcu accumsan fringilla sit amet facilisis risus. Nunc neque eros, dapibus porta varius eget, lacinia et orci. Nulla ultricies egestas interdum. Phasellus porta ipsum eu dui euismod porttitor.
