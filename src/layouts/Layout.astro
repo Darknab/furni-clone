@@ -27,17 +27,6 @@ const { title, headerTitle, headerText} = Astro.props;
 	<body>
 		<header>
 			<Navigation />
-			<div class="container row">
-				<div class="title-description col-sm">
-					<h1>{headerTitle}</h1>
-					<p>{headerText}</p>
-					<button type="button" class="btn btn-warning">Shop Now</button>
-					<button type="button" class="btn btn-outline-light">Explore</button>
-				</div>
-				<div class="hero-image col-sm">
-					<img src="/src/images/couch.png" alt="">
-				</div>
-			</div>
 		</header>
 		<slot />
 		<Footer />
