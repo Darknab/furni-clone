@@ -1,0 +1,46 @@
+---
+import TeamCard from "./TeamCard.astro"
+
+
+const team = [
+  {
+    image: {
+      url: '/src/images/person_1.jpg',
+      alt: 'Lawson Arnold',
+    },
+    name: 'Lawson Arnold',
+    position: 'CEO, Founder, Atty.',
+    description: 'Separated they live in. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.',
+  },
+  {
+    image: {
+      url: '/src/images/person_2.jpg',
+      alt: 'Jeremy Walker',
+    },
+    name: 'Jeremy Walker',
+    position: 'CEO, Founder, Atty.',
+    description: 'Separated they live in. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.',
+  },
+  {
+    image: {
+      url: '/src/images/person_3.jpg',
+      alt: 'Patric White',
+    },
+    name: 'Patric White',
+    position: 'CEO, Founder, Atty.',
+    description: 'Separated they live in. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.',
+  },
+  {
+    image: {
+      url: '/src/images/person_1.jpg',
+      alt: 'Katryn Ryan',
+    },
+    name: 'Katryn Ryan',
+    position: 'CEO, Founder, Atty.',
+    description: 'Separated they live in. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.',
+  },
+]
+---
+<section class="container row">
+  {team.map(member => <TeamCard image={member.image} name={member.name} position={member.position} description={member.description} />)}
+</section>
