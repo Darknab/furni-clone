@@ -1,0 +1,11 @@
+---
+const { image, name, position, description } = Astro.props;
+---
+<div class="card col">
+  <img src={image.url} class="card-img-top" alt={image.alt}>
+  <div class="card-body">
+    <h5 class="card-title">{name}</h5>
+    <p class="card-text">{position}</p>
+    <p class="card-text">{description}</p>
+  </div>
+</div>
