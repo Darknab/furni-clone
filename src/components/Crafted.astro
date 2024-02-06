@@ -1,36 +1,13 @@
 ---
 import ProductCard from "./ProductCard.astro";
-import { Image } from "astro:assets";
-import product1 from "../images/product-1.png";
-import product2 from "/src/images/product-2.png";
-import product3 from "/src/images/product-3.png";
+import { getCollection } from "astro:content";
 
-const nordicChair = {
-  image: {
-    url: product1,
-    alt: "Picture of a nordic chair",
-  },
-  title: "Nordic Chair",
-  price: "$50.00",
-}
 
-const kruzoAeroChair = {
-  image: {
-    url: product2,
-    alt: "Picture of Kruzo Aero Chair",
-  },
-  title: "Kruzo Aero Chair",
-  price: "$78.00",
-}
 
-const ergonomicChair = {
-  image: {
-    url: product3,
-    alt: "Picture of Ergonomic Chair",
-  },
-  title: "Ergonomic Chair",
-  price: "$43.00",
-}
+const allProducts = await getCollection("products");
+
+const randomProducts = allProducts.sort(() => Math.random() - Math.random()).slice(0, 3);
+
 ---
 <section class="container row">
   <div class="col">
@@ -38,13 +15,6 @@ const ergonomicChair = {
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus facilis odit repellat ipsa suscipit dolores?</p>
     <a class="btn btn-dark" role="button" href="#">Explore</a>
   </div>
-  <div class="col">
-    <ProductCard title={nordicChair.title} image={nordicChair.image} price={nordicChair.price}/>
-  </div>
-  <div class="col">
-    <ProductCard title={kruzoAeroChair.title} image={kruzoAeroChair.image} price={kruzoAeroChair.price} />
-  </div>
-  <div class="col">
-    <ProductCard title={ergonomicChair.title} image={ergonomicChair.image} price={ergonomicChair.price} />
-  </div>
+  
+  {randomProducts.map((product) => <ProductCard title={product.data.title} image={product.data.image} price={product.data.price} />)}
 </section>
