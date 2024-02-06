@@ -2,9 +2,10 @@
 const { image, title, author, date} = Astro.props;
 ---
 <div class="card">
-  <img src={image.url.src} class="card-img-top" alt={image.alt}>
+  <img src={image.url} class="card-img-top" alt={image.alt}>
   <div class="card-body">
     <h5 class="card-title">{title}</h5>
     <p class="card-text">by <span>{author}</span> on <span>{date}</span></p>
   </div>
 </div>
+
