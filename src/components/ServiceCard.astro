@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon/components';
+const { svg, title, description } = Astro.props;
+---
+<div class="card">
+  <div>
+    <Icon name={svg} />
+  </div>
+  <h5 class="card-title">{title}</h5>
+  <p class="card-text">{description}</p>
+</div>
+
+<style>
+  [data-icon] {
+    font-size: 3em;
+  }
+</style>
