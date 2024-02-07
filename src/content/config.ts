@@ -1,3 +1,4 @@
+import { string } from 'astro/zod';
 import { z, defineCollection } from 'astro:content';
 
 // Here goes the testimonialsCollection
@@ -42,8 +43,19 @@ const postsCollection = defineCollection({
   })
 })
 
+// Here goes the services collection
+const servicesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    svg: z.string(),
+    title: z.string(),
+    description: z.string()
+  })
+})
+
 export const collections = {
   testimonials: testimonialsCollection,
   posts: postsCollection,
   products: productsCollection,
+  services: servicesCollection,
 }
