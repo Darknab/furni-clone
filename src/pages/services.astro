@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import Crafted from "../components/Crafted.astro";
+import Testimonials from "../components/Testimonials.astro";
+
+const allServices = await getCollection("services");
+---
+<Layout>
+  <Hero />
+  <section class="services container">
+    {allServices.map(service => <ServiceCard svg={service.data.svg} title={service.data.title} description={service.data.description} /> )}
+  </section>
+  <Crafted />
+  <Testimonials />
+</Layout>
+
+<style>
+  .services {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+</style>
