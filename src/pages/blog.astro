@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import PostCard from "../components/PostCard.astro";
+import Testimonials from "../components/Testimonials.astro";
+
+const allPosts = await getCollection("posts");
+---
+<Layout>
+  <Hero />
+  <section class="posts container">
+    {allPosts.map(post => <PostCard image={post.data.image} author={post.data.author} title={post.data.title} date={post.data.pubDate} /> )}
+  </section>
+  <Testimonials />
+</Layout>
+
+<style>
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2em;
+  }
+</style>
