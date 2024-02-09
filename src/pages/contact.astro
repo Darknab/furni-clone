@@ -1,0 +1,96 @@
+---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+
+
+---
+<Layout>
+  <Hero />
+  <form id="form" class="container-sm">
+    <div class="row">
+      <div class="mb-3 col">
+        <label for="firstName" class="form-label">First name</label>
+        <input type="text" class="form-control" id="firstName">
+      </div>
+      <div class="mb-3 col">
+        <label for="lastName" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="lastName">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3 form-check">
+      <label for="message" class="form-label">Message</label>
+      <textarea class="form-control" rows="5" id="message"></textarea>
+    </div>
+    <button type="submit" id ="submit" class="btn btn-dark">Send Message</button>
+  </form>
+</Layout>
+
+<script is:inline>
+  const get = (id) => document.getElementById(id) || { value:'' };
+
+  const form = get('form');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    return false;
+  });
+
+  const submitForm = () => {
+    saveInput();
+    sendMail();
+  };
+
+  const getFormData = () => {
+    const store = Object.create(null);
+    store.firstName = get('firstName')?.value;
+    store.lastName = get('lastName')?.value;
+    store.email = get('email')?.value;
+    store.message = get('message')?.value;
+    return store;
+  };
+
+  const saveInput = () => {
+    const { message, email, ...rest } = getFormData();
+    localStorage.setItem('contactinfo', JSON.stringify(rest));
+  };
+
+  const retrieveInfo = () => {
+    const store = JSON.parse(localStorage.getItem('contactinfo') || '{}');
+    get('firstName').value = store.firstName || '';
+    get('lastName').value = store.lastName || '';
+    get('email').value = store.email || '';
+  };
+
+  const submitBtn = get('submit');
+  submitBtn?.addEventListener('click', submitForm)
+  retrieveInfo()
+  ;[...document.querySelectorAll('input')][0]?.focus()
+
+  const sendMail = async () => {
+    const { firstName, lastName, email, message } = getFormData();
+    const data = await fetch('/api/sendmail.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ firstName, lastName, email, message }),
+    })
+      .then((res) => {
+        if(!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json()
+      })
+      .catch((err) => {
+        console.log('Error', err);
+        throw new Error('Network error.');
+      })
+    console.log(data)
+  }
+
+</script>
