@@ -1,6 +1,6 @@
 ---
 image: 
-  url: '../../images/product-1.png'
+  url: '../src/images/product-1.png'
   alt: 'nordic chair'
 title: 'Nordic Chair'
 price: '$50.00'
