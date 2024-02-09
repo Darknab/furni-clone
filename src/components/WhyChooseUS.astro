@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-// import chooseImage from './src/images/why-choose-us.jpg';
+import chooseImage from '../images/why-choose-us.jpg';
 import ServiceCard from './ServiceCard.astro';
 
 const allServices = await getCollection("services");
@@ -17,9 +17,7 @@ const mainServices = allServices.slice(0, 4);
   </div>
 
   <div class="col">
-    <!-- 
     <img class="choose-image rounded-4" src={chooseImage.src} alt="Picture of a table next to a couch">
-    -->
   </div>
 </section>
 
