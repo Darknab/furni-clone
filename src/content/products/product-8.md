@@ -1,6 +1,6 @@
 ---
 image: 
-  url: '/src/images/product-2.png'
+  url: './product-2.png'
   alt: 'Kruzo Aero Chair'
 title: 'Kruzo Aero Chair'
 price: '$78.00'
