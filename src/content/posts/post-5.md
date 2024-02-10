@@ -3,7 +3,7 @@ title: 'How To Keep Your Furniture Clean'
 pubDate: 2022-01-12
 author: 'Robert Fox'
 image:
-  url: '/src/images/post-2.jpg'
+  url: './post-2.jpg'
   alt: ''
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit lacus fermentum, congue ex semper, interdum dui. In malesuada ut erat quis lacinia. Mauris finibus pharetra tempor. Fusce et vulputate est. Aliquam in cursus augue, sed posuere enim. Cras faucibus pellentesque ante ut luctus. In ac felis ac lacus bibendum sollicitudin. Ut pretium eros eu metus efficitur tincidunt. In eu sapien lacus.
