@@ -3,14 +3,89 @@ import couch from '../images/couch.png';
 
 const { headerTitle, headerText } = Astro.props;
 ---
-<div class="container row">
-  <div class="title-description col-sm">
-    <h1>{headerTitle}</h1>
-    <p>{headerText}</p>
-    <button type="button" class="btn btn-warning">Shop Now</button>
-    <button type="button" class="btn btn-outline-light">Explore</button>
-  </div>
-  <div class="hero-image col-sm">
-    <img src={couch.src} alt="">
+
+<div class="hero bg-green ">
+  <div class="container row overflow-hidden ">
+    <div class="title-description col-lg-5">
+      <h1>{headerTitle}</h1>
+      <p class="mt-5 mb-4">{headerText}</p>
+      <a href="/shop" class="btn rounded-5 me2 shop" >Shop now</a>
+      <a href="/services" class="btn rounded-5 explore">Explore</a>
+    </div>
+    <div class="hero-image col-lg-7">
+      <img class="img-fluid couch" src={couch.src} alt="">
+    </div>
   </div>
 </div>
+
+<style>
+
+
+  p {
+    color: #FFFFFF80;
+  }
+
+  a {
+    padding: 0.75em 1.875em;
+    font-weight: 500;
+  }
+
+  .shop {
+    background-color: #fabe29;
+    color: #2F2F2F;
+  }
+
+  .shop:hover {
+    background-color: #f8b810;
+    color: #2F2F2F;
+  }
+
+  .explore {
+    background-color: transparent;
+    border:2px solid #FFFFFF80;
+    color: #FFFFFF
+  }
+
+  .explore:hover {
+    border:2px solid #FFFFFF;
+    background-color: transparent;
+    color: #FFFFFF;
+  }
+
+ 
+
+  .container {
+    margin: 0 auto;
+  }
+
+  .hero-image {
+    position: relative;
+    z-index: 1;
+  }
+  
+
+  .hero-image::after {
+    content:"";
+    background-image: url(../images/dots-light.svg);
+    position: absolute;
+    height: 217px;
+    width: 255px;
+    top: 10%;
+    left: 70%;
+    z-index: -1;
+  }
+
+  @media (max-width: 988px) {
+    .hero-image::after {
+      top: 10%;
+      right: 10%;
+    }
+  }
+
+  @media (max-width: 630px) {
+    .hero-image {
+      overflow: hidden;
+    }
+  }
+  
+</style>
