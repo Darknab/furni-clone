@@ -1,6 +1,6 @@
 ---
 image: 
-  url: './product-3.png'
+  url: '/product-3.png'
   alt: 'Ergonomic Chair'
 title: 'Ergonomic Chair'
 price: '$43.00'
