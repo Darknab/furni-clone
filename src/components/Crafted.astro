@@ -2,19 +2,34 @@
 import ProductCard from "./ProductCard.astro";
 import { getCollection } from "astro:content";
 
-
-
 const allProducts = await getCollection("products");
-
 const randomProducts = allProducts.sort(() => Math.random() - Math.random()).slice(0, 3);
-
 ---
-<section class="container row">
-  <div class="col">
-    <h2>Crafted with excellent materials</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus facilis odit repellat ipsa suscipit dolores?</p>
-    <a class="btn btn-dark" role="button" href="#">Explore</a>
+<section class="crafted bg-light p-5 text-main">
+  <div class="container row py-5">
+    <div class="col crafted-text pe-5">
+      <h2 class="mb-4">Crafted with excellent material.</h2>
+      <p class="mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus facilis odit repellat ipsa suscipit dolores?</p>
+      <a class="btn btn-dark rounded-5 shop" role="button" href="/shop">Shop</a>
+    </div>
+    
+    {randomProducts.map((product) => <ProductCard title={product.data.title} image={product.data.image} price={product.data.price} link={product.slug} />)}
   </div>
-  
-  {randomProducts.map((product) => <ProductCard title={product.data.title} image={product.data.image} price={product.data.price} />)}
+
 </section>
+
+<style>
+  .container {
+    margin: 0 auto;
+  }
+
+.crafted-text h2 {
+  margin-bottom: ;
+}
+
+.shop {
+  padding: 0.75em 1.875em;
+  font-weight: 500;
+}
+  
+</style>

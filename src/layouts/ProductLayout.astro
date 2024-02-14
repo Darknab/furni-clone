@@ -5,9 +5,30 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout>
-  <h1>{frontmatter.title}</h1>
-  <img src={frontmatter.image.url} alt={frontmatter.image.alt}>
-  <slot />
-  <p>{frontmatter.price}</p>
+<div class="bg-light">
+  <div class="container py-5">
+    <h1 class="text-center">{frontmatter.title}</h1>
+    <div class="row mt-5">
+      <img src={frontmatter.image.url} alt={frontmatter.image.alt} class="col">
+      <div class="col description p-5">
+        <slot />
+        <p class="price text-center">{frontmatter.price}</p>
+      </div>
+    </div>
+  </div>
+</div>
 </Layout>
+
+<style>
+  .description {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+  }
+  .price {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: red;
+  }
+</style>
 
