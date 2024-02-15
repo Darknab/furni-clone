@@ -2,8 +2,8 @@
 import { Icon } from 'astro-icon/components';
 const { svg, title, description } = Astro.props;
 ---
-<div class="card">
-  <div>
+<div class="card bg-light">
+  <div class="svg-container">
     <Icon name={svg} />
   </div>
   <h5 class="card-title">{title}</h5>
@@ -12,6 +12,33 @@ const { svg, title, description } = Astro.props;
 
 <style>
   [data-icon] {
-    font-size: 3em;
+    font-size: 2.875em;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .card {
+    border: none;
+  }
+
+  h5,
+  p {
+    font-size: 0.875em;
+  }
+
+  .svg-container {
+    z-index: 1;
+  }
+
+  .svg-container::after {
+    content: "";
+    background-color: #dce5e4;
+    border-radius: 50%;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 8%;
+    left: 10%;
+    z-index: -1;
   }
 </style>

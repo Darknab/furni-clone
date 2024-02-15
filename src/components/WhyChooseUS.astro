@@ -7,29 +7,54 @@ const allServices = await getCollection("services");
 const mainServices = allServices.slice(0, 4);
 
 ---
-<section class="container row">
-  <div class="col">
+<section class="choose-us bg-light text-main" >
+<div class="container row py-5" >
+  <div class="col-5">
     <h2>Why Choose Us</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum distinctio voluptatibus esse praesentium ratione quod doloremque accusantium, nostrum fugiat provident?</p>
     <div class="choose-cards col">
       { mainServices.map(service => <ServiceCard svg={service.data.svg} title={service.data.title} description={service.data.description}  /> ) }
     </div>
   </div>
-
-  <div class="col">
+  <div class="col"></div>
+  <div class="col-5 image-container">
     <img class="choose-image rounded-4" src={chooseImage.src} alt="Picture of a table next to a couch">
   </div>
+</div>
 </section>
 
 <style>
+  .container {
+    margin: 0 auto;
+  }
+
+  .col p {
+    font-size: 0.875em;
+  }
+
   .choose-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2em;
+    gap: 1em;
   }
+
   .choose-image {
-    max-width: 450px;
+    max-width: 100%;
     height: auto;
+  }
+
+  .image-container{
+    position: relative;
+  }
+
+  .image-container::before {
+    content: "";
+    background-image: url("../images/dots-yellow.svg");
+    position: absolute;
+    width: 255px;
+    height: 217px;
+    top: -15%;
+    left: -15%;
   }
 
 </style>
