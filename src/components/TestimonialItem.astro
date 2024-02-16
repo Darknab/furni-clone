@@ -2,20 +2,54 @@
 const { text, title, subtitle, imageSrc, imageAlt } = Astro.props;
 ---
 
-<div class="testimonial-item">
-  <p class="mx-auto">{text}</p>
-  <img class="rounded-circle" src={imageSrc} alt={imageAlt}>
+<div class="testimonial-item position-absolute">
+  <p class="mx-auto text">{text}</p>
+  <img class="rounded-circle mb-4" src={imageSrc} alt={imageAlt}>
   <h3>{title}</h3>
-  <p class="mx-auto">{subtitle}</p>
+  <p class="mx-auto subtitle">{subtitle}</p>
 </div>
 
 <style>
+
+  .text {
+    font-size: 1.125em;
+  }
+  
+  h3, 
+  .subtitle {
+    font-size: 0.875em;
+  }
+
+  h3 {
+    font-weight: 700;
+  }
+
   .hidden {
     display: none;
+  }
+  
+  .hide-to-right {
+    animation: hide-to-right 0.5s ease;
+  }
+
+  .show-to-right {
+    animation: show-to-right 0.5s ease;
+  }
+
+  .hide-to-left {
+    animation: hide-to-left 0.5s ease;
+  }
+
+  .show-to-left {
+    animation: show-to-left 0.5s ease;
   }
 
   .testimonial-item {
     text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    
 
     & p {
       max-width: 800px;
@@ -23,6 +57,63 @@ const { text, title, subtitle, imageSrc, imageAlt } = Astro.props;
 
     & img {
       width: 70px;
+    } 
+  }
+
+
+  @keyframes hide-to-right {
+    from {
+      transform: translateX(-50%);
+      opacity: 1;
+      max-height: 400px;
+    }
+
+    to {
+      transform: translateX(0%);
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+
+  @keyframes show-to-right {
+    from {
+      transform: translate(-100%);
+      opacity: 0;
+      max-height: 0;
+    }
+
+    to {
+      transform: translateX(-50%);
+      opacity: 1;
+      max-height: 400px;
+    } 
+  }
+
+  @keyframes hide-to-left {
+    from {
+      transform: translateX(-50%);
+      opacity: 1;
+      max-height: 400px;
+    }
+
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+
+  @keyframes show-to-left {
+    from {
+      transform: translate(0%);
+      opacity: 0;
+      max-height: 0;
+    }
+
+    to {
+      transform: translateX(-50%);
+      opacity: 1;
+      max-height: 400px;
     } 
   }
 </style>

@@ -4,19 +4,36 @@ import TestimonialItem from "./TestimonialItem.astro";
 
 const allTestimonials = await getCollection("testimonials");
 ---
-<section class="position-relative container">
-  <h2 class="text-center">Testimonials</h2>
+<section class="testimonials bg-light text-main">
+<div class="position-relative container">
+  <h2 class="text-center mb-4">Testimonials</h2>
 
-  <div class="testimonials-container">
+  <div class="testimonials-container position-relative">
     {allTestimonials.map((testimonial) =>
        <TestimonialItem text={testimonial.data.text} imageSrc={testimonial.data.image.url} imageAlt={testimonial.data.image.alt} title={testimonial.data.title} subtitle={testimonial.data.subtitle} />
        )}
-    <button id="previous" class="btn btn-outline-dark position-absolute top-50 start-0 rounded-circle">&#60;</button>
-    <button id="next" class="btn btn-outline-dark position-absolute top-50 end-0 rounded-circle">&#62;</button>
   </div>
-
+  <button id="previous" class="btn btn-outline-dark position-absolute start-0 rounded-circle ">&#60;</button>
+  <button id="next" class="btn btn-outline-dark position-absolute end-0 rounded-circle ">&#62;</button>
+</div>
 </section>
 
 <style>
  
+ .container {
+  margin: 0 auto;
+  height: 400px;
+ }
+
+ button {
+  padding: 15px 20px;
+  border: none;
+  background-color: #dce5e4;
+
+  &:hover {
+    background-color: #3B5D50;
+    color: white;
+  }
+ }
+
 </style>
