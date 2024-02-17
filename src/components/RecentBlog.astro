@@ -4,22 +4,21 @@ import PostCard from '../components/PostCard.astro';
 
 const allPosts = await getCollection("posts");
 
-// const dates = [...new Set(allPosts.map(post => post.data.pubDate).flat())];
-// const datesSorted = dates.sort();
-// const recentThree = datesSorted.slice(-3);
+allPosts.sort((a , b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 
-const postsSorted = allPosts.sort((a , b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
-
-const recentThree = postsSorted.slice(-3);
-
+const recentThree = allPosts.slice(-3);
 ---
-<section class="container">
-  <h2>Recent Blog</h2>
-  <a href="#">View all posts</a>
+<section class="recent-blog bg-light text-main py-5">
+<div class="container">
+  <div class="title mb-5">
+    <h2>Recent Blog</h2>
+    <a href="/blog">View All Posts</a>
+  </div>
   <div class="posts">
-    {recentThree.map((post) => <PostCard image={post.data.image} title={post.data.title} author={post.data.author} date={post.data.pubDate} />
+    {recentThree.map((post) => <PostCard image={post.data.image} title={post.data.title} author={post.data.author} date={post.data.pubDate} link={post.slug} />
     )}
   </div>
+</div>
 </section>
 
 <style>
@@ -28,4 +27,16 @@ const recentThree = postsSorted.slice(-3);
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2em;
   }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+
+    & a {
+      color: #2f2f2f;
+      font-size: 0.875em;
+      font-weight: 600;
+    }
+  }
+
 </style>

@@ -4,9 +4,30 @@ import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 <Layout>
+<div class="container bg-light text-main py-5">
   <h1>{frontmatter.title}</h1>
   <h3>By {frontmatter.author}</h3>
-  <p>{frontmatter.pubDate}</p>
-  <img src={frontmatter.image.url} alt={frontmatter.image.alt}>
-  <slot />
+  <p>{frontmatter.pubDate.toString().slice(0, 15)}</p>
+  <img src={frontmatter.image.url} alt={frontmatter.image.alt} class="post-image mb-4">
+  <div class="content">
+    <slot />
+  </div>
+  
+</div>
 </Layout>
+
+<style>
+  .post-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 700px;
+    height: auto;
+  }
+
+  .content {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.125em;
+
+  }
+</style>

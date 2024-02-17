@@ -1,11 +1,49 @@
 ---
-const { image, title, author, date} = Astro.props;
+const { image, title, author, date, link } = Astro.props;
 ---
-<div class="card">
-  <img src={image.url} class="card-img-top" alt={image.alt}>
+<div class="card bg-light">
+  <img src={image.url} class="card-img-top rounded-4" alt={image.alt}>
   <div class="card-body">
     <h5 class="card-title">{title}</h5>
-    <p class="card-text">by <span>{author}</span> on <span>{date}</span></p>
+    <p class="card-text">by <span>{author}</span> on <span>{date.toString().slice(0, 15)}</span></p>
   </div>
+  <a href=`/posts/${link}`></a>
 </div>
 
+<style>
+  .card {
+    border: none;
+  }
+
+  .card-title {
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+  .card-text {
+    font-size: 0.875em;
+
+    & span {
+      font-weight: 600;
+      color: #2f2f2f;
+    }
+  } 
+
+  .card-img-top {
+    transition: opacity 0.3s ease;
+  }
+
+  .card:hover {
+    & .card-img-top {
+      opacity: 0.6;
+    }
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+</style>

@@ -6,17 +6,23 @@ import PostCard from "../components/PostCard.astro";
 import Testimonials from "../components/Testimonials.astro";
 
 const allPosts = await getCollection("posts");
+
+const headerTitle = "Blog";
+const headerText = "Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique."
+const title = "Furni"
 ---
-<Layout>
-  <Hero />
-  <section class="posts container">
-    {allPosts.map(post => <PostCard image={post.data.image} author={post.data.author} title={post.data.title} date={post.data.pubDate} /> )}
+<Layout title={title}>
+  <Hero headerTitle={headerTitle} headerText={headerText} />
+  <section class="posts bg-light text-main py-5">
+    <div class="container">
+      {allPosts.map(post => <PostCard image={post.data.image} author={post.data.author} title={post.data.title} date={post.data.pubDate} /> )}
+    </div>
   </section>
   <Testimonials />
 </Layout>
 
 <style>
-  .posts {
+  .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2em;
