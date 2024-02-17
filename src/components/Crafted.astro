@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 const allProducts = await getCollection("products");
 const randomProducts = allProducts.sort(() => Math.random() - Math.random()).slice(0, 3);
 ---
-<section class="crafted bg-light p-5 text-main">
+<section class="crafted bg-main p-5 text-main">
   <div class="container row py-5">
     <div class="col crafted-text pe-5">
       <h2 class="mb-4">Crafted with excellent material.</h2>
