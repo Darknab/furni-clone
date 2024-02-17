@@ -2,7 +2,7 @@
 import sofa from '../images/sofa.png';
 ---
 <footer class="text-main py-5">
-<div class="container position-relative">
+<div class="container position-relative py-5">
 <img src={sofa.src} alt="" class="sofa position-absolute">
 
   <div class="newsletter">
@@ -101,6 +101,12 @@ import sofa from '../images/sofa.png';
     background-color: #3b5d50;
     padding: 1em 2em;
     color: white;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .send:hover {
+    opacity: 0.9;
   }
 
   footer li {
@@ -112,11 +118,17 @@ import sofa from '../images/sofa.png';
     text-decoration: none;
     color: #2f2f2f;
     font-size: 0.875em;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  footer a:hover {
+    opacity: 0.8;
   }
 
   .sofa {
     max-width: 380px;
-    top: -75%;
+    top: -30%;
     right: 0;
   }
 
