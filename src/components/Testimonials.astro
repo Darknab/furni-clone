@@ -4,7 +4,7 @@ import TestimonialItem from "./TestimonialItem.astro";
 
 const allTestimonials = await getCollection("testimonials");
 ---
-<section class="testimonials bg-main text-main">
+<section class="testimonials bg-main text-main py-5">
 <div class="position-relative container">
   <h2 class="text-center mb-4">Testimonials</h2>
 
@@ -21,7 +21,6 @@ const allTestimonials = await getCollection("testimonials");
 <style>
  
  .container {
-  margin: 0 auto;
   height: 400px;
  }
 
@@ -35,5 +34,4 @@ const allTestimonials = await getCollection("testimonials");
     color: white;
   }
  }
-
 </style>

@@ -3,7 +3,7 @@
 ---
 
 <div class="navigation bg-green ">
-<div class="container">
+<div class="container position-relative">
   <div class="hamburger">
     <span class="line"></span>
     <span class="line"></span>
@@ -36,13 +36,8 @@
 </div>
 
 <style>
-
   .navigation {
     padding: 2em;
-  }
-
-  .container {
-    position: relative;
   }
 
   .nav-links {
@@ -96,8 +91,6 @@
     background-color: #fff;
   }
 
-
-
   @media (max-width: 750px) {
     .hamburger {
       display: block;
@@ -134,20 +127,20 @@
 
   @media (min-width: 750px) {
     .nav-link::after {
-    content: "";
-    position: absolute;
-    display: block;
-    bottom: 0;
-    width: 0;
-    height: 4px;
-    background-color: #F9BF29;
-    transition: width 300ms ease 0s;
-  }
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: 0;
+      width: 0;
+      height: 4px;
+      background-color: #F9BF29;
+      transition: width 300ms ease 0s;
+    }
 
-  .nav-link:hover::after,
-  .nav-link:focus::after,
-  .nav-link:active::after {
-    width: 100%;
-  }
+    .nav-link:hover::after,
+    .nav-link:focus::after,
+    .nav-link:active::after {
+      width: 100%;
+    }
   }
 </style>

@@ -6,6 +6,10 @@ h1 {
   font-weight: 700;
 }
 
+.container {
+  margin: 0 auto;
+}
+
 .bg-green {
   background-color: #3B5D50;
   color: white;

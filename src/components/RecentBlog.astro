@@ -8,8 +8,8 @@ allPosts.sort((a , b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 
 const recentThree = allPosts.slice(-3);
 ---
-<section class="recent-blog bg-main text-main py-5">
-<div class="container">
+<section class="recent-blog bg-main text-main">
+<div class="container py-5">
   <div class="title mb-5">
     <h2>Recent Blog</h2>
     <a href="/blog">View All Posts</a>
@@ -22,6 +22,9 @@ const recentThree = allPosts.slice(-3);
 </section>
 
 <style>
+  .recent-blog {
+    padding-block:7em ;
+  }
   .posts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -38,5 +41,4 @@ const recentThree = allPosts.slice(-3);
       font-weight: 600;
     }
   }
-
 </style>
