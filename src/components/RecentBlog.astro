@@ -41,4 +41,16 @@ const recentThree = allPosts.slice(-3);
       font-weight: 600;
     }
   }
+
+  @media (max-width: 992px) {
+    .posts {
+      grid-template-columns: 1fr 1fr;
+    }
+
+  @media (max-width: 768px) {
+    .posts {
+      display: block;
+    }
+  }
+  }
 </style>

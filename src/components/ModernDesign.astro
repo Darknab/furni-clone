@@ -6,13 +6,13 @@ import imgGrid3 from '../images/img-grid-3.jpg';
 ---
 <section class="modern-design bg-main text-main py-5">
 <div class="container row py-5">
-  <div class="grid col-7">
+  <div class="grid col-lg-7">
     <img class= "image-1 rounded-5" src={imgGrid1.src} alt="A cozy living room corner with a beige sofa and pillows, cork pedestals and potted plants.">
     <img class= "image-2 rounded-5" src={imgGrid2.src} alt="A modern living room with a black floor lamp, two stylish chairs in green and white, and a grey sofa, all on a light blue rug with large windows in the background.">
     <img class= "image-3 rounded-5" src={imgGrid3.src} alt="A simple, light-colored wooden stool with a square seat and a handle, on a blue background.">
   </div>
   
-  <div class="design-text col-5">
+  <div class="design-text col-lg-5">
     <h2 class="ps-3 mb-4">We Help You Make Modern Interior Design</h2>
     <p class="ps-3 mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente sequi amet odit accusantium magni voluptatum, vel repellat? Inventore consectetur quia ab, odio harum et alias laudantium, pariatur omnis a sunt?</p>
     <ul class="grid-list">
@@ -81,6 +81,12 @@ import imgGrid3 from '../images/img-grid-3.jpg';
   a {
     padding: 0.75em 1.875em;
     font-weight: 500;
+  }
+
+  @media (max-width: 992px) {
+    .design-text {
+      margin-top: 2em;
+    }
   }
 </style>
 

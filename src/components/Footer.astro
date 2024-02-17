@@ -18,9 +18,9 @@ import sofa from '../images/sofa.png';
     </svg>
     <h3 class="subscribe">Subscribe to Newsletter</h3>
     <form action="">
-      <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control me-4">
-      <input type="email" name="email" id="email" placeholder="Enter tour email" class="form-control me-4">
-      <button type="submit" class="btn rounded-3 send">
+      <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control">
+      <input type="email" name="email" id="email" placeholder="Enter tour email" class="form-control">
+      <button type="submit" class="btn rounded-3 send col">
         <span class="fa fa-paper-plane"></span>
       </button>
     </form>
@@ -28,7 +28,7 @@ import sofa from '../images/sofa.png';
 </div>
 <h2 class="footer-title">Furni.</h2>
 <div class="row">
-  <div class="col-3">
+  <div class="col-lg-3">
     <p class="footer-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni dolorum vero voluptatem ullam quasi eius impedit qui iste enim sit!</p>
     <div class="social-links">
       <a  class="link" href="#">
@@ -58,7 +58,7 @@ import sofa from '../images/sofa.png';
       <li><a href="#" target="_blank">Live chat</a></li>
     </ul>
   </div>
-  <div class="col row">
+  <div class="col-lg row">
     <ul class="col">
       <li><a href="#" target="_blank">jobs</a></li>
       <li><a href="#" target="_blank">Our team</a></li>
@@ -95,6 +95,10 @@ import sofa from '../images/sofa.png';
 
   form {
     margin-bottom: 5em;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
   }
 
   .send {
@@ -103,6 +107,7 @@ import sofa from '../images/sofa.png';
     color: white;
     opacity: 1;
     transition: opacity 0.3s ease;
+    max-width: fit-content;
   }
 
   .send:hover {
@@ -165,4 +170,14 @@ import sofa from '../images/sofa.png';
       color: #dce5e4;
     }
   } 
+
+  @media (max-width: 768px) {
+    .sofa {
+      top: -20%;
+    }
+
+    form {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 </style>
