@@ -3,7 +3,7 @@ title: 'First Time Home Owner Ideas'
 pubDate: 2022-01-08
 author: 'Kristin Watson'
 image:
-  url: './post-1.jpg'
+  url: '/post-1.jpg'
   alt: ''
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor nisl a velit pharetra efficitur. Vestibulum ut consequat neque. Donec auctor egestas massa, sed pulvinar metus luctus sed. Curabitur sagittis ullamcorper erat, scelerisque dignissim est tempor eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae sapien scelerisque, dignissim leo non, fermentum urna. Pellentesque non ex et massa interdum mollis. Sed libero metus, accumsan vel ipsum eget, auctor rhoncus enim. Suspendisse non fermentum enim, sit amet tempor arcu. Nulla pretium dui id turpis ultricies ultrices nec vel metus.

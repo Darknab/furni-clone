@@ -3,7 +3,7 @@ title: 'Small Space Furniture Apartment Ideas'
 pubDate: 2022-02-01
 author: 'Kristin Watson'
 image:
-  url: './post-3.jpg'
+  url: '/post-3.jpg'
   alt: ''
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum ut ipsum ut vehicula. Vivamus consequat sapien tincidunt, viverra mauris ac, lobortis nibh. Donec blandit, ligula id suscipit dictum, dolor dui pretium magna, id laoreet tellus sem eu nunc. Nunc scelerisque risus tortor, vel lacinia dolor ornare porta. Maecenas vel felis vitae magna placerat laoreet sit amet sit amet nibh. Integer cursus hendrerit mauris. Vivamus malesuada lacus eget massa commodo, et viverra augue pretium. Ut nunc massa, elementum non rutrum egestas, volutpat eu risus. In nec neque erat. Proin elit massa, vulputate nec dolor a, lobortis fringilla enim. Phasellus euismod consectetur eros nec egestas. Integer in erat nec ante consectetur volutpat eget commodo elit.
