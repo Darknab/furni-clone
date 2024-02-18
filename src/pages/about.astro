@@ -5,10 +5,12 @@ import Testimonials from "../components/Testimonials.astro";
 import WhyChooseUS from "../components/WhyChooseUS.astro";
 import Layout from "../layouts/Layout.astro";
 
-
+const title = 'About Us'
+const headerTitle = 'About Us'
+const headerText = 'Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.'
 ---
-<Layout>
-  <Hero />
+<Layout title={title}>
+  <Hero headerTitle={headerTitle} headerText={headerText} />
   <WhyChooseUS />
   <OurTeam />
   <Testimonials />

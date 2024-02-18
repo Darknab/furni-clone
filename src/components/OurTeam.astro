@@ -44,6 +44,9 @@ const team = [
   },
 ]
 ---
-<section class="container row">
+<section class="our-team bg-main py-5 text-main">
+  <h3 class="text-center">Our team</h3>
+  <div class="container row">
   {team.map(member => <TeamCard image={member.image} name={member.name} position={member.position} description={member.description} />)}
+  </div>
 </section>

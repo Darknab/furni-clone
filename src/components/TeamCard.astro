@@ -1,11 +1,28 @@
 ---
 const { image, name, position, description } = Astro.props;
 ---
-<div class="card col">
+<div class="card col-lg bg-main text-main">
   <img src={image.url} class="card-img-top" alt={image.alt}>
-  <div class="card-body">
+  <div class="card-body mt-4">
     <h5 class="card-title">{name}</h5>
     <p class="card-text">{position}</p>
     <p class="card-text">{description}</p>
   </div>
 </div>
+
+<style>
+  .card {
+    border: none;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  h5 {
+    text-decoration: underline;
+    font-size: 1.750em;
+  }
+
+  p {
+    font-size: 0.875em;
+  }
+</style>
