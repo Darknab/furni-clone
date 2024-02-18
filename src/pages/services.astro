@@ -7,20 +7,38 @@ import Crafted from "../components/Crafted.astro";
 import Testimonials from "../components/Testimonials.astro";
 
 const allServices = await getCollection("services");
+
+const title = 'Services';
+const headerTitle = 'Services';
+const headerText = 'Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.';
 ---
-<Layout>
-  <Hero />
-  <section class="services container">
-    {allServices.map(service => <ServiceCard svg={service.data.svg} title={service.data.title} description={service.data.description} /> )}
+<Layout title={title}>
+  <Hero headerTitle={headerTitle} headerText={headerText} />
+  <section class="services bg-main text-main py-5">
+    <div class="grid container">
+      {allServices.map(service => <ServiceCard svg={service.data.svg} title={service.data.title} description={service.data.description} /> )}
+    </div>
   </section>
   <Crafted />
   <Testimonials />
 </Layout>
 
 <style>
-  .services {
+  .grid {
     display: grid;
     gap: 2em;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .grid {
+      display: block;
+    }
   }
 </style>
