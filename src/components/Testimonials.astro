@@ -19,7 +19,6 @@ const allTestimonials = await getCollection("testimonials");
 </section>
 
 <style>
- 
  .container {
   height: 400px;
  }
@@ -32,6 +31,12 @@ const allTestimonials = await getCollection("testimonials");
   &:hover {
     background-color: #3B5D50;
     color: white;
+  }
+ }
+
+ @media (max-width: 768px) {
+  .container {
+    height: 600px;
   }
  }
 </style>

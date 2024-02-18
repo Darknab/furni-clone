@@ -1,7 +1,7 @@
 ---
 import sofa from '../images/sofa.png';
 ---
-<footer class="text-main py-5">
+<footer class="text-main py-5 mt-5">
 <div class="container position-relative py-5">
 <img src={sofa.src} alt="" class="sofa position-absolute">
 
@@ -178,6 +178,12 @@ import sofa from '../images/sofa.png';
 
     form {
       grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .sofa {
+      max-width: 150px;
     }
   }
 </style>
