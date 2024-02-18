@@ -13,7 +13,7 @@ const title = "Furni"
 ---
 <Layout title={title}>
   <Hero headerTitle={headerTitle} headerText={headerText} />
-  <section class="posts bg-light text-main py-5">
+  <section class="posts bg-main text-main py-5">
     <div class="container">
       {allPosts.map(post => <PostCard image={post.data.image} author={post.data.author} title={post.data.title} date={post.data.pubDate} /> )}
     </div>
@@ -24,7 +24,19 @@ const title = "Furni"
 <style>
   .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2em;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .container {
+      display: block;
+    }
   }
 </style>
