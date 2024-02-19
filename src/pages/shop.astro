@@ -12,7 +12,7 @@ const headerTitle = 'Shop';
   <Hero headerTitle={headerTitle} />
   <section class="products bg-main text main py-5">
     <div class="container grid">
-      {allProducts.map((product) => <ProductCard title={product.data.title} image={product.data.image} price={product.data.price} />)}
+      {allProducts.map((product) => <ProductCard title={product.data.title} image={product.data.image} price={product.data.price} link={product.slug} />)}
     </div>
   </section>
 </Layout>

@@ -15,7 +15,7 @@ const title = "Furni"
   <Hero headerTitle={headerTitle} headerText={headerText} />
   <section class="posts bg-main text-main py-5">
     <div class="container">
-      {allPosts.map(post => <PostCard image={post.data.image} author={post.data.author} title={post.data.title} date={post.data.pubDate} /> )}
+      {allPosts.map(post => <PostCard image={post.data.image} author={post.data.author} title={post.data.title} date={post.data.pubDate}  link={post.slug}/> )}
     </div>
   </section>
   <Testimonials />
