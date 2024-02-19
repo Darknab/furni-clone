@@ -2,33 +2,101 @@
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 
-
+const title = 'Contact';
+const headerTitle = 'Contact us';
+const headerText = 'Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.'
 ---
-<Layout>
-  <Hero />
-  <form id="form" class="container-sm">
-    <div class="row">
-      <div class="mb-3 col">
-        <label for="firstName" class="form-label">First name</label>
-        <input type="text" class="form-control" id="firstName">
+<Layout title={title}>
+  <Hero headerTitle={headerTitle} headerText={headerText} />
+  <section class="contact bg-main text-main py-5">
+    <div class="container">
+      <div class="coordinates row">
+        <div class="col"><i class="fa-solid fa-location-dot"></i> <p>43 Raymouth Rd. Baltemoer, London 3910</p></div>
+        <div class="col"><i class="fa-solid fa-envelope"></i> <p>info@yourdomain.com</p></div>
+        <div class="col"><i class="fa-solid fa-phone"></i> <p>+1 294 3925 3939</p></div>
       </div>
-      <div class="mb-3 col">
-        <label for="lastName" class="form-label">Last name</label>
-        <input type="text" class="form-control" id="lastName">
-      </div>
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+      <form id="form">
+        <div class="row">
+          <div class="mb-3 col">
+            <label for="firstName" class="form-label">First name</label>
+            <input type="text" class="form-control" id="firstName" value="" placeholder="">
+          </div>
+          <div class="mb-3 col">
+            <label for="lastName" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lastName" value="" placeholder="">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        </div>
+    
+        <div class="mb-3 ">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" rows="5" id="message"></textarea>
+        </div>
+        <button type="submit" id ="submit" class="btn btn-dark mt-3">Send Message</button>
+      </form>
     </div>
 
-    <div class="mb-3 form-check">
-      <label for="message" class="form-label">Message</label>
-      <textarea class="form-control" rows="5" id="message"></textarea>
-    </div>
-    <button type="submit" id ="submit" class="btn btn-dark">Send Message</button>
-  </form>
+    <p id="message-sent" class="text-center mt-2"></p>
+
+  </section>
 </Layout>
+
+<style>
+  #form {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  input,
+  textarea {
+    border: solid 1px #dce5e4;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 1px 1px #dce5e4;
+    font-size: 0.875em;
+    color: #6A6A6A;
+  }
+
+  button {
+    padding: 0.75em 1.875em;
+    font-weight: 500;
+    border-radius: 1.875em;
+  }
+
+  .coordinates {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 0.875em;
+    margin-bottom: 3em;
+
+    & div {
+      display: flex;
+      gap: 1em;
+    }
+
+    & p {
+      vertical-align: middle;
+      align-self: center;
+    }
+
+    & i {
+      max-width: max-content;
+      padding: 1.25em;
+      color: white;
+      background-color: #3B5D50;
+      border-radius: 5px;
+      font-size: 1em;
+      align-self: flex-start;
+    }
+  }
+
+  #message-sent {
+    color: red;
+  }
+</style>
 
 <script is:inline>
   const get = (id) => document.getElementById(id) || { value:'' };
@@ -70,6 +138,11 @@ import Layout from "../layouts/Layout.astro";
   submitBtn?.addEventListener('click', submitForm)
   retrieveInfo()
   ;[...document.querySelectorAll('input')][0]?.focus()
+ 
+  function displayMessage() {
+    message = get('message-sent');
+    message.innerHTML = 'Your message has been sent, thank you for reaching out!';
+  }
 
   const sendMail = async () => {
     const { firstName, lastName, email, message } = getFormData();
@@ -90,7 +163,8 @@ import Layout from "../layouts/Layout.astro";
         console.log('Error', err);
         throw new Error('Network error.');
       })
-    console.log(data)
+    console.log(data);
+    displayMessage();
   }
 
 </script>
