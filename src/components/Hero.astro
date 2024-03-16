@@ -9,7 +9,7 @@ const { headerTitle, headerText } = Astro.props;
     <div class="title-description col-lg-5">
       <h1>{headerTitle}</h1>
       <p class="mt-5 mb-4">{headerText}</p>
-      <a href="/shop" class="btn rounded-5 me2 shop" >Shop now</a>
+      <a href="/shop" class="btn rounded-5 shop" >Shop now</a>
       <a href="/services" class="btn rounded-5 explore">Explore</a>
     </div>
     <div class="hero-image col-lg-7">
@@ -31,6 +31,8 @@ const { headerTitle, headerText } = Astro.props;
   .shop {
     background-color: #fabe29;
     color: #2F2F2F;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
   }
 
   .shop:hover {
@@ -41,7 +43,8 @@ const { headerTitle, headerText } = Astro.props;
   .explore {
     background-color: transparent;
     border:2px solid #FFFFFF80;
-    color: #FFFFFF
+    color: #FFFFFF;
+    margin-bottom: 1rem;
   }
 
   .explore:hover {
