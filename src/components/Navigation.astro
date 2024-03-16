@@ -81,6 +81,7 @@
     position: absolute;
     left: 100%;
     cursor: pointer;
+
   }
 
   .line {
@@ -91,7 +92,7 @@
     background-color: #fff;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 768px) {
     .hamburger {
       display: block;
     }
@@ -125,7 +126,7 @@
 
   }
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     .nav-link::after {
       content: "";
       position: absolute;
@@ -141,6 +142,12 @@
     .nav-link:focus::after,
     .nav-link:active::after {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hamburger {
+      left: 80%;
     }
   }
 </style>
